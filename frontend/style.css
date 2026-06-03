@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #0b1a3a, #050814);
+    color: rgb(251, 246, 246);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* LOGIN CARD */
+.login-card {
+    width: 320px;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,150,255,0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* floating effect */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+.ai-badge {
+    width: 40px;
+    height: 40px;
+    background: #1e90ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 12px;
+    color: #aaa;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin: 5px 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #1e90ff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0077ff;
+}
+
+.signup {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* RIGHT SIDE ROBOT PLACEHOLDER */
+.robot {
+    width: 180px;
+    height: 180px;
+    background: url('https://cdn-icons-png.flaticon.com/512/4712/4712109.png');
+    background-size: cover;
+    filter: drop-shadow(0 0 20px #1e90ff);
+}
