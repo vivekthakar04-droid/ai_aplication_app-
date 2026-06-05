@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>AI Payment Login</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Flask correct CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
+
 <body>
 
 <div class="container">
@@ -16,8 +19,8 @@
         <h2>AI Payment Reminder Assistant</h2>
         <p>Smart reminders. On time. Every time.</p>
 
-        <!-- FIXED FORM (CONNECTED TO FLASK) -->
-        <form id="loginForm" method="POST" action="http://127.0.0.1:5000/login">
+        <!-- LOGIN FORM -->
+        <form id="loginForm" method="POST" action="/login">
 
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
@@ -41,6 +44,8 @@
 
 </div>
 
-<script src="script.js"></script>
+<!-- ✅ Flask correct JS link -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>

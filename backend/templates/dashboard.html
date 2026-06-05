@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Reminder Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-bell"></i>
+            <h2>PAYMENT<br>REMINDER</h2>
+        </div>
+
+        <ul class="menu">
+
+    <li class="active">
+        <a href="/dashboard-page">
+            <i class="fas fa-home"></i> Dashboard
+        </a>
+    </li>
+
+    <li>
+        <a href="/customers-page">
+            <i class="fas fa-users"></i> Customers
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fas fa-file-invoice"></i> Invoices
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fas fa-credit-card"></i> Payments
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fas fa-bell"></i> Reminders
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fas fa-chart-bar"></i> Reports
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fas fa-cog"></i> Settings
+        </a>
+    </li>
+
+</ul>
+
+        <div class="logout">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+
+            <div class="title">
+                <i class="fas fa-bars"></i>
+                Payment Reminder Dashboard
+            </div>
+
+            <div class="profile">
+                <i class="fas fa-bell"></i>
+                <span>Admin User</span>
+            </div>
+
+        </div>
+
+        <!-- CARDS -->
+        <div class="cards">
+
+            <div class="card blue">
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <div>
+                    <h4>Total Customers</h4>
+                    <h2 id="total">0</h2>
+                </div>
+            </div>
+
+            <div class="card green">
+                <div class="icon">
+                    <i class="fas fa-file-invoice"></i>
+                </div>
+
+                <div>
+                    <h4>Total Invoices</h4>
+                    <h2 id="paid">0</h2>
+                </div>
+            </div>
+
+            <div class="card orange">
+                <div class="icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+
+                <div>
+                    <h4>Total Outstanding</h4>
+                    <h2 id="outstanding">₹0</h2>
+                </div>
+            </div>
+
+            <div class="card red">
+                <div class="icon">
+                    <i class="fas fa-calendar-times"></i>
+                </div>
+
+                <div>
+                    <h4>Overdue Invoices</h4>
+                    <h2 id="overdue">0</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CHARTS -->
+        <div class="chart-section">
+
+            <div class="chart-box">
+                <h3>Outstanding Overview</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h3>Outstanding Trend</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+
+        </div>
+
+        <!-- TABLE -->
+        <div class="bottom-section">
+
+            <div class="table-box">
+
+                <h3>Recent Overdue Invoices</h3>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>INV001</td>
+                            <td>Sneha Verma</td>
+                            <td>₹45,000</td>
+                            <td class="danger">Overdue</td>
+                        </tr>
+
+                        <tr>
+                            <td>INV002</td>
+                            <td>Priya Joshi</td>
+                            <td>₹62,500</td>
+                            <td class="danger">Overdue</td>
+                        </tr>
+
+                        <tr>
+                            <td>INV003</td>
+                            <td>Vikram Verma</td>
+                            <td>₹32,000</td>
+                            <td class="danger">Overdue</td>
+                        </tr>
+
+                    </tbody>+
+
+                </table>
+
+            </div>
+
+            <div class="summary-box">
+
+                <h3>Reminder Summary</h3>
+
+                <canvas id="summaryChart"></canvas>
+
+                <button class="btn">
+                    Send Bulk Reminder
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+
+</body>
+</html>

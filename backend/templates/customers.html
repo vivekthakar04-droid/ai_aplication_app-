@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customers</title>
+</head>
+<body>
+
+<h1>Customers Page</h1>
+
+<a href="/dashboard-page">Back to Dashboard</a>
+
+</body>
+</html>
+
+<h2>Customer List</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Business Type</th>
+            <th>Invoice ID</th>
+            <th>Invoice Amount</th>
+            <th>Due Date</th>
+            <th>Days Overdue</th>
+            <th>Payment Status</th>
+            <th>Credit Score</th>
+            <th>Outstanding Balance</th>
+        </tr>
+    </thead>
+
+    <tbody id="customerTable">
+    </tbody>
+</table>
+
+<script src="{{ url_for('static', filename='customers.js') }}"></script>

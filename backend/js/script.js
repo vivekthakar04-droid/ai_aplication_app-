@@ -1,4 +1,3 @@
 document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("AI Login Clicked");
+    window.location.href = "/dashboard-page";
 });
